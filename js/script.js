@@ -19,7 +19,6 @@ const btnBottom = document.querySelector('.bottom');
 const btnTop = document.querySelector('.top');
 const smallPicsContainer = document.querySelector('.smallpics');
 
-
 const images = [
   './img/01.webp',
   './img/02.webp',
@@ -28,33 +27,32 @@ const images = [
   './img/05.webp'];
   
 let counterImg = 0;
+let counterSmall= 0;
+let smallPicsHTML = '';
 itemsWrapper.innerHTML = '';
 
-for (let i = 0; i < images.length; i++) {
-  const smallPic = document.createElement('div');
-  smallPic.classList.add('smallpic');
-  
-  // Crea una imagen y establece su atributo src
-  const img = document.createElement('img');
-  img.src = images[i];
-  
-  // Agrega la imagen al div .smallpic
-  smallPic.appendChild(img);
-  
-  smallPicsContainer.appendChild(smallPic);
-}
 //1.
 for(let i = 0; i < images.length; i++){
   itemsWrapper.innerHTML += '<img src="' + images[i] +  '" class="item hide">';
+  smallPicsHTML += `
+    <div class="smallpic inactive">
+      <img src="${images[i]}" />
+    </div>
+  `;
 }
 //2.
 const itemsCollection = document.getElementsByClassName('item');
+const smallpicCollection = document.getElementsByClassName('smallpic');
+smallPicsContainer.innerHTML = smallPicsHTML;
 //3. 
 itemsCollection [counterImg].classList.remove('hide');
+smallpicCollection[0].classList.add('active');
+
 //4.
 btnBottom.addEventListener('click',function(){
   //a 
   itemsCollection[counterImg].classList.add('hide');
+  smallpicCollection[counterImg].classList.remove('active');
   //b
   counterImg++;
     //6
@@ -62,11 +60,13 @@ btnBottom.addEventListener('click',function(){
       counterImg = 0;}
   //c
   itemsCollection[counterImg].classList.remove('hide');
+  smallpicCollection[counterImg].classList.add('active');
 })
 //5.
 btnTop.addEventListener('click',function(){
   //a 
   itemsCollection[counterImg].classList.add('hide');
+  smallpicCollection[counterImg].classList.remove('active');
   //b
   counterImg--;
     //7
@@ -75,4 +75,7 @@ btnTop.addEventListener('click',function(){
   }
   //c
   itemsCollection[counterImg].classList.remove('hide');
+  smallpicCollection[counterImg].classList.add('active');
 });
+
+
