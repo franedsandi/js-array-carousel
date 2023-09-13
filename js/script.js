@@ -37,3 +37,12 @@ for(let i = 0; i < images.length; i++){
 const itemsCollection = document.getElementsByClassName('item');
 //3. 
 itemsCollection [counterImg].classList.remove('hide');
+//4.
+btnBottom.addEventListener('click',function(){
+  //a 
+  itemsCollection[counterImg].classList.add('hide');
+  //b
+  counterImg++;
+  //c
+  itemsCollection[counterImg].classList.remove('hide');
+})
