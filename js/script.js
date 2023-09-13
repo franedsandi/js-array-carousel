@@ -46,3 +46,12 @@ btnBottom.addEventListener('click',function(){
   //c
   itemsCollection[counterImg].classList.remove('hide');
 })
+//5.
+btnTop.addEventListener('click',function(){
+  //a 
+  itemsCollection[counterImg].classList.add('hide');
+  //b
+  counterImg--;
+  //c
+  itemsCollection[counterImg].classList.remove('hide');
+})
