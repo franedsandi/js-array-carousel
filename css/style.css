@@ -17,7 +17,7 @@
   width: 60%;
   height: 50%;
   margin: 0 auto;
-  background-color: blue;
+
 }
 .slider{
   height: 100%;
@@ -26,7 +26,7 @@
 .items-wrapper{
   height: 100%;
   width: 80%;
-  background-color: aqua;
+
 }
 .items-wrapper img{
   width: 100%;
@@ -37,8 +37,17 @@
   position: relative;
   height: 100%;
   width: 20%;
-  background-color: rgb(17, 207, 65);
 }
+.smallpics{
+  height: 100%;
+  width: 100%;
+}
+.smallpic{
+  height: 20%;
+  width: 100%;
+  background-color: black;
+}
+
 .btn-arrow{
   font-size: 30px;
   width: 50px;
