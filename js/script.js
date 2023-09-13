@@ -17,6 +17,8 @@
 const itemsWrapper = document.querySelector('.items-wrapper');
 const btnBottom = document.querySelector('.bottom');
 const btnTop = document.querySelector('.top');
+const smallPicsContainer = document.querySelector('.smallpics');
+
 
 const images = [
   './img/01.webp',
@@ -28,6 +30,19 @@ const images = [
 let counterImg = 0;
 itemsWrapper.innerHTML = '';
 
+for (let i = 0; i < images.length; i++) {
+  const smallPic = document.createElement('div');
+  smallPic.classList.add('smallpic');
+  
+  // Crea una imagen y establece su atributo src
+  const img = document.createElement('img');
+  img.src = images[i];
+  
+  // Agrega la imagen al div .smallpic
+  smallPic.appendChild(img);
+  
+  smallPicsContainer.appendChild(smallPic);
+}
 //1.
 for(let i = 0; i < images.length; i++){
   itemsWrapper.innerHTML += '<img src="' + images[i] +  '" class="item hide">';
@@ -60,4 +75,4 @@ btnTop.addEventListener('click',function(){
   }
   //c
   itemsCollection[counterImg].classList.remove('hide');
-})
+});
