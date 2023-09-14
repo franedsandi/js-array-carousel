@@ -37,7 +37,7 @@ for(let i = 0; i < images.length; i++){
   const image = images[i]
   itemsWrapper.innerHTML += `<img src="${image}" class="item hide">`;
   /* 8 */
-  smallPicsHTML += `<div class="smallpic inactive"><img src="${image}"/></div>`;
+  smallPicsHTML += `<div class="smallpic"><img src="${image}"/></div>`;
 }
 //2.
 const itemsCollection = document.getElementsByClassName('item');
