@@ -15,17 +15,18 @@
 
 /* elements */
 const itemsWrapper = document.querySelector('.items-wrapper');
+const smallPicsContainer = document.querySelector('.smallpics');
+/* buttons */
 const btnBottom = document.querySelector('.bottom');
 const btnTop = document.querySelector('.top');
-const smallPicsContainer = document.querySelector('.smallpics');
-
+/* images */
 const images = [
   './img/01.webp',
   './img/02.webp',
   './img/03.webp',
   './img/04.webp',
   './img/05.webp'];
-  
+/* reset */
 let counterImg = 0;
 let counterSmall= 0;
 let smallPicsHTML = '';
@@ -33,16 +34,18 @@ itemsWrapper.innerHTML = '';
 
 //1.
 for(let i = 0; i < images.length; i++){
-  itemsWrapper.innerHTML += '<img src="' + images[i] +  '" class="item hide">';
+  const image = images[i]
+  itemsWrapper.innerHTML += `<img src="${image}" class="item hide">`;
   smallPicsHTML += `
     <div class="smallpic inactive">
-      <img src="${images[i]}" />
+      <img src="${image}" />
     </div>
   `;
 }
 //2.
 const itemsCollection = document.getElementsByClassName('item');
 const smallpicCollection = document.getElementsByClassName('smallpic');
+/* 8 */
 smallPicsContainer.innerHTML = smallPicsHTML;
 //3. 
 itemsCollection [counterImg].classList.remove('hide');
@@ -52,6 +55,7 @@ smallpicCollection[0].classList.add('active');
 btnBottom.addEventListener('click',function(){
   //a 
   itemsCollection[counterImg].classList.add('hide');
+  /* 9a */
   smallpicCollection[counterImg].classList.remove('active');
   //b
   counterImg++;
@@ -60,12 +64,14 @@ btnBottom.addEventListener('click',function(){
       counterImg = 0;}
   //c
   itemsCollection[counterImg].classList.remove('hide');
+  /* 9b */
   smallpicCollection[counterImg].classList.add('active');
 })
 //5.
 btnTop.addEventListener('click',function(){
   //a 
   itemsCollection[counterImg].classList.add('hide');
+  /* 9a */
   smallpicCollection[counterImg].classList.remove('active');
   //b
   counterImg--;
@@ -75,6 +81,7 @@ btnTop.addEventListener('click',function(){
   }
   //c
   itemsCollection[counterImg].classList.remove('hide');
+  /* 9b */
   smallpicCollection[counterImg].classList.add('active');
 });
 
