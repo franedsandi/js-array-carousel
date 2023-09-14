@@ -17,7 +17,6 @@
   width: 60%;
   height: 80%;
   margin: 0 auto;
-
 }
 .slider{
   height: 100%;
@@ -26,7 +25,6 @@
 .items-wrapper{
   height: 100%;
   width: 80%;
-
 }
 .items-wrapper img{
   width: 100%;
@@ -53,8 +51,8 @@
   object-fit: cover;
 }
 .inactive{
-  filter: brightness(32%) contrast(88%) grayscale(39%);}
-
+  filter: brightness(32%) contrast(88%) grayscale(39%);
+}
 .active{
   filter: none;
   border: 3px solid gray;
