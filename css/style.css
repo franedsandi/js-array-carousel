@@ -26,11 +26,6 @@
   height: 100%;
   width: 80%;
 }
-.items-wrapper img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .items-thumbnail{
   position: relative;
   height: 100%;
@@ -43,9 +38,8 @@
 .smallpic{
   height: 20%;
   width: 100%;
-  background-color: black;
 }
-.smallpic img{
+img{
   width: 100%;
   height: 100%;
   object-fit: cover;
