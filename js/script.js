@@ -36,21 +36,16 @@ itemsWrapper.innerHTML = '';
 for(let i = 0; i < images.length; i++){
   const image = images[i]
   itemsWrapper.innerHTML += `<img src="${image}" class="item hide">`;
-  smallPicsHTML += `
-    <div class="smallpic inactive">
-      <img src="${image}" />
-    </div>
-  `;
+  /* 8 */
+  smallPicsHTML += `<div class="smallpic inactive"><img src="${image}"/></div>`;
 }
 //2.
 const itemsCollection = document.getElementsByClassName('item');
 const smallpicCollection = document.getElementsByClassName('smallpic');
-/* 8 */
 smallPicsContainer.innerHTML = smallPicsHTML;
 //3. 
 itemsCollection [counterImg].classList.remove('hide');
 smallpicCollection[0].classList.add('active');
-
 //4.
 btnBottom.addEventListener('click',function(){
   //a 
@@ -60,8 +55,7 @@ btnBottom.addEventListener('click',function(){
   //b
   counterImg++;
     //6
-    if (counterImg >= images.length) {
-      counterImg = 0;}
+    if (counterImg === images.length) {counterImg = 0;}
   //c
   itemsCollection[counterImg].classList.remove('hide');
   /* 9b */
@@ -76,9 +70,7 @@ btnTop.addEventListener('click',function(){
   //b
   counterImg--;
     //7
-    if (counterImg < 0) {
-      counterImg = images.length - 1;
-  }
+    if (counterImg < 0) {counterImg = images.length - 1;}
   //c
   itemsCollection[counterImg].classList.remove('hide');
   /* 9b */
